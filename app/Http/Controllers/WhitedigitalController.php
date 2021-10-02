@@ -77,8 +77,7 @@ class WhitedigitalController extends Controller {
         return $text;
     }
 
-    public function index(Request $request) 
-    {
+    public function index(Request $request) {
         if (!ctype_digit($request->number) || $request->number < 0 || $request->number > 9999 || !in_array($request->lang, ['lat', 'eng'])) {
             abort(400, '400 Bad Request');
         }
